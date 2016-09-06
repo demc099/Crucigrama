@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 Hola señoritas, modifiquen este documento para saber si estan bien sincronizadas
+<<<<<<< HEAD
 Hola, Hola que lindo programita!! :)
 Hola
 Hola
@@ -7,11 +8,20 @@ Hola
 :)
 :)
 =======
+
+Holaaa
+>>>>>>> origin/master
+=======
 Hola señoritas, modifiquen este documento para saber si estan bien sincroniza
 
 Modifican el documento a su antojo.. 
 jjjj luego se van aqui 
 suave.. 
 logicamente lo guardan
+>>>>>>> origin/master
+
+
+Espero que ya sirva cre que ya lo logré
+Holiii soy tori Me ven??
 
 >>>>>>> origin/master
