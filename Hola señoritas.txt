@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Hola señoritas, modifiquen este documento para saber si estan bien sincronizadas
 Hola, Hola que lindo programita!! :)
 Hola
@@ -5,3 +6,12 @@ Hola
 Hola
 :)
 :)
+=======
+Hola señoritas, modifiquen este documento para saber si estan bien sincroniza
+
+Modifican el documento a su antojo.. 
+jjjj luego se van aqui 
+suave.. 
+logicamente lo guardan
+
+>>>>>>> origin/master
