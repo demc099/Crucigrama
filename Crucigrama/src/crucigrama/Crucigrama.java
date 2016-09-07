@@ -5,6 +5,8 @@
  */
 package crucigrama;
 
+import vistas.VistaJuego;
+
 /**
  *
  * @author Zeneida
@@ -15,7 +17,8 @@ public class Crucigrama {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        new VistaJuego().show();
+        
     }
     
 }
