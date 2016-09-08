@@ -21,6 +21,16 @@ public class Palabra {
     private int posColumna;
     private int posFila;
 
+    Palabra() {
+          this.termino = " ";
+        this.Definicion = " ";
+        this.tamaño = 0;
+        this.direccion =' ';
+        this.posColumna = -1;
+        this.posFila = -1;
+
+    }
+
     public String getTermino() {
         return termino;
     }

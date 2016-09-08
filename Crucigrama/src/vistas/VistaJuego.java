@@ -5,6 +5,11 @@
  */
 package vistas;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Zeneida
@@ -27,40 +32,163 @@ public class VistaJuego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        panelPrincipal = new javax.swing.JPanel();
+        Verticales = new javax.swing.JLabel();
+        Horizontales = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        Archivo = new javax.swing.JMenu();
+        Cargar = new javax.swing.JMenuItem();
+        Salir = new javax.swing.JMenuItem();
+        Modo = new javax.swing.JMenu();
+        Normal = new javax.swing.JMenuItem();
+        Asistido = new javax.swing.JMenuItem();
+        Crusigrama = new javax.swing.JMenu();
+        Revisar = new javax.swing.JMenuItem();
+        Solucion = new javax.swing.JMenuItem();
+        Ayuda1 = new javax.swing.JMenu();
+        Ayuda2 = new javax.swing.JMenuItem();
+        Acerca = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 801, Short.MAX_VALUE)
+        javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
+        panelPrincipal.setLayout(panelPrincipalLayout);
+        panelPrincipalLayout.setHorizontalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 432, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelPrincipalLayout.setVerticalGroup(
+            panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 399, Short.MAX_VALUE)
         );
+
+        Archivo.setText("Archivo");
+
+        Cargar.setText("Cargar");
+        Cargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CargarActionPerformed(evt);
+            }
+        });
+        Archivo.add(Cargar);
+
+        Salir.setText("Salir");
+        Archivo.add(Salir);
+
+        jMenuBar1.add(Archivo);
+
+        Modo.setText("Modo");
+
+        Normal.setText("Normal");
+        Normal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NormalActionPerformed(evt);
+            }
+        });
+        Modo.add(Normal);
+
+        Asistido.setText("Asistido");
+        Modo.add(Asistido);
+
+        jMenuBar1.add(Modo);
+
+        Crusigrama.setText("Crucigrama");
+
+        Revisar.setText("Revisar");
+        Revisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RevisarActionPerformed(evt);
+            }
+        });
+        Crusigrama.add(Revisar);
+
+        Solucion.setText("Solución");
+        Crusigrama.add(Solucion);
+
+        jMenuBar1.add(Crusigrama);
+
+        Ayuda1.setText("Ayuda");
+
+        Ayuda2.setText("Ayuda");
+        Ayuda1.add(Ayuda2);
+
+        Acerca.setText("Acerca");
+        Acerca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AcercaActionPerformed(evt);
+            }
+        });
+        Ayuda1.add(Acerca);
+
+        jMenuBar1.add(Ayuda1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Verticales, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Horizontales, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(Verticales, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Horizontales, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void NormalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NormalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NormalActionPerformed
+
+    private void AcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcercaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AcercaActionPerformed
+
+    private void RevisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RevisarActionPerformed
+       // control.verificar();  
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RevisarActionPerformed
+
+    private void CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarActionPerformed
+       
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+               JTextField btn1 = new JTextField(" ");
+                btn1.setBounds(j*30,i* 30, 32, 32);
+                  /*btn1.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent ae) {
+                       
+                    }
+                     }); 
+                */
+                
+             
+                panelPrincipal.add(btn1);
+            }
+        }
+        panelPrincipal.repaint();
+        
+    }//GEN-LAST:event_CargarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,6 +226,22 @@ public class VistaJuego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem Acerca;
+    private javax.swing.JMenu Archivo;
+    private javax.swing.JMenuItem Asistido;
+    private javax.swing.JMenu Ayuda1;
+    private javax.swing.JMenuItem Ayuda2;
+    private javax.swing.JMenuItem Cargar;
+    private javax.swing.JMenu Crusigrama;
+    private javax.swing.JLabel Horizontales;
+    private javax.swing.JMenu Modo;
+    private javax.swing.JMenuItem Normal;
+    private javax.swing.JMenuItem Revisar;
+    private javax.swing.JMenuItem Salir;
+    private javax.swing.JMenuItem Solucion;
+    private javax.swing.JLabel Verticales;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
+   //  private Control control;
 }

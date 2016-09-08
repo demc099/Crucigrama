@@ -38,6 +38,16 @@ public class Glosario {
         return null;
     }
     
+     public Palabra buscarXDe(String a){
+        for(int i=0; i< cantidad; i++){
+          if(palabritas.get(i).getDefinicion()==a){
+              return palabritas.get(i);
+           
+          }
+        }
+        return null;
+    }
+     
     public String toString(){
         String msj=" ";
         for(int i=0; i<cantidad ; i++){
