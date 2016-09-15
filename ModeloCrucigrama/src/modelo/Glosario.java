@@ -3,8 +3,10 @@
 package modelo;
 
 import java.util.LinkedList;
+import org.w3c.dom.Node;
+import xml.ListaSerializable;
 
-public class Glosario {
+public class Glosario  {
     
     private int cantidad;
     private LinkedList<Palabra> palabritas;
@@ -12,9 +14,10 @@ public class Glosario {
     public Glosario() {
     
     cantidad=0;
-    palabritas= new LinkedList<Palabra>();
+    palabritas= new LinkedList();
  
     }
+    
     public void agregar(Palabra pa){
         palabritas.add(pa);
         cantidad++;
@@ -70,6 +73,10 @@ public class Glosario {
 
     public void setPalabritas(LinkedList<Palabra> palabritas) {
         this.palabritas = palabritas;
+    }
+
+    private Iterable<Node> Palabra(Node nodoRoot) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
     

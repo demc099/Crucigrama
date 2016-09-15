@@ -73,6 +73,11 @@ public class VistaJuego extends javax.swing.JFrame {
         Archivo.add(Cargar);
 
         Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
         Archivo.add(Salir);
 
         jMenuBar1.add(Archivo);
@@ -169,6 +174,7 @@ public class VistaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_RevisarActionPerformed
 
     private void CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarActionPerformed
+       new VistaPrincipal().show();
        
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
@@ -189,6 +195,10 @@ public class VistaJuego extends javax.swing.JFrame {
         panelPrincipal.repaint();
         
     }//GEN-LAST:event_CargarActionPerformed
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+       System.exit(-1);
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments

@@ -1,10 +1,14 @@
 
 package modelo;
 
+import java.util.LinkedList;
+import org.w3c.dom.Node;
+import xml.SerializadorHelper;
+
 
 public class Palabra {
 
-    public Palabra(String termino, String Definicion, int tamaño, char direccion, int posColumna, int posFila) {
+    public Palabra(String termino, String Definicion, int tamaño, String direccion, int posColumna, int posFila) {
         this.termino = termino;
         this.Definicion = Definicion;
         this.tamaño = tamaño;
@@ -17,18 +21,28 @@ public class Palabra {
     private String termino;
     private String Definicion;
     private int tamaño;
-    private char direccion;
+    private String direccion;
     private int posColumna;
     private int posFila;
 
     Palabra() {
-          this.termino = " ";
+        this.termino = " ";
         this.Definicion = " ";
         this.tamaño = 0;
-        this.direccion =' ';
+        this.direccion =" ";
         this.posColumna = -1;
         this.posFila = -1;
 
+    }
+
+    Palabra(Node actual) {
+        posFila=Integer.parseInt(SerializadorHelper.getNodeValue("row", actual.getChildNodes()));
+        posColumna=Integer.parseInt(SerializadorHelper.getNodeValue("col", actual.getChildNodes()));
+        direccion= SerializadorHelper.getNodeValue("direction", actual.getChildNodes());
+        termino= SerializadorHelper.getNodeValue("term", actual.getChildNodes());
+        Definicion= SerializadorHelper.getNodeValue("definition", actual.getChildNodes());
+        tamaño= termino.length();
+        
     }
 
     public String getTermino() {
@@ -55,11 +69,11 @@ public class Palabra {
         this.tamaño = tamaño;
     }
 
-    public char getDireccion() {
+    public String getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(char direccion) {
+    public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 

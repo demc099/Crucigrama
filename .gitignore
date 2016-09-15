@@ -12,3 +12,6 @@
 hs_err_pid*
 /ModeloCrucigrama/build/
 /Crucigrama/build/
+/Serializador/build/
+/Serializador/nbproject/private/
+/Serializador/dist/
