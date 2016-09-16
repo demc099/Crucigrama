@@ -23,10 +23,6 @@ public class CrucigramaJuego {
             IngresarPalabra(new Palabra(actual));
         }
     }
-    
-    public void pintar(){
-        
-    }
 
     public Glosario getGlosarito() {
         return glosarito;
