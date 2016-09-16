@@ -6,7 +6,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import xml.SerializadorHelper;
-import modelo.Palabra;
+
 
 public class CrucigramaJuego {
 
@@ -15,6 +15,12 @@ public class CrucigramaJuego {
         filas = f;
         columnas = c;
         matriz = new char[f][c];
+         for(int i=0; i<filas; i++){
+           for(int j=0; j<columnas; j++){
+               matriz[i][j]=' ';
+           }
+       }      
+        
     }
 
     public void crear(Node nodoRoot) {
@@ -113,14 +119,13 @@ public class CrucigramaJuego {
         }
 
     }
+   
 
     private Glosario glosarito;
     private int filas;
     private int columnas;
     private char matriz[][];
 
-    private Iterable<Node> Palabra(Node nodoRoot) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 
 }
