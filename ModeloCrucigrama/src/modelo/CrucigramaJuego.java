@@ -12,19 +12,11 @@ import xml.SerializadorHelper;
 
 
 public class CrucigramaJuego  {
-   // public CrucigramaJuego(Node nodeRoot){
-    //    glosarito= new Glosario();
-    //     matriz = new char[][];
-    //     for(int i=0; i<filas; i++){
-    //       for(int j=0; j<columnas; j++){
-    //           matriz[i][j]=' ';
-    //       }
-    //   }    
-   //  }
+  
      public CrucigramaJuego() {
         glosarito = new Glosario();
-        filas = 0;
-        columnas = 0;
+        filas = 15;
+        columnas = 15;
         matriz = new char[filas][columnas];
          for(int i=0; i<filas; i++){
            for(int j=0; j<columnas; j++){
