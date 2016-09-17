@@ -15,7 +15,9 @@ import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.TableColumnModel;
 
 /**
  *
@@ -64,11 +66,11 @@ public class VistaJuego extends javax.swing.JFrame {
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 432, Short.MAX_VALUE)
+            .addGap(0, 1028, Short.MAX_VALUE)
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 399, Short.MAX_VALUE)
+            .addGap(0, 376, Short.MAX_VALUE)
         );
 
         Archivo.setText("Archivo");
@@ -143,9 +145,8 @@ public class VistaJuego extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Verticales, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Horizontales, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -156,14 +157,14 @@ public class VistaJuego extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
+                        .addGap(107, 107, 107)
                         .addComponent(Verticales, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(Horizontales, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(Horizontales, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
 
         pack();
@@ -179,18 +180,40 @@ public class VistaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_AcercaActionPerformed
 
     private void RevisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RevisarActionPerformed
-  
+       boolean b=true;
+        for(int i=0; i< Rows; i++){
+            for(int j=0; j<col; j++){
+              if(control.verificarLetra((char)jTable1.getValueAt(i, j), i,j )!=true){
+                      b=false;
+                    }
+                }
+            
                
-        
+        }    
     }//GEN-LAST:event_RevisarActionPerformed
 
     private void CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarActionPerformed
-          int numRows;
-          int numColumns;
-           numRows= control.getFilas();
-           numColumns= control.getColumnas();
-           JTable(int numRows, int numColumns);
+        JTable jTable1;  
+        int numRows;
+        int numColumns;
+    
+       //String xml;
+       //xml=abrirArchivo();
+       //control.leerXML(xml);
+        
+          numRows=  10 ;//control.getFilas();
+          numColumns= 10;// control.getColumnas(); 
+          jTable1= new JTable(numRows,numColumns);
+         //
+          jTable1.setBounds(65,65,1150,1150);
+          //jTable1.getBounds();
+           panelPrincipal.add(jTable1);
            
+       panelPrincipal.repaint();
+    
+    
+    
+    
     
     }
         
@@ -326,4 +349,8 @@ public class VistaJuego extends javax.swing.JFrame {
     private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
    //  private Control control;
+JTable jTable1;  
+int Rows;
+int col;
+
 }

@@ -39,6 +39,9 @@ public class Control {
          return crusi.getColumnas();
      }
      
+     public boolean verificarLetra(char a, int p, int q){
+       return  crusi.verificarLetra(a, p, q);
+     }
     CrucigramaJuego crusi;
     VistaPrincipal vista1;
     VistaJuego vista2;

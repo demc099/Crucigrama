@@ -26,7 +26,7 @@ public class CrucigramaJuego {
         matriz = new char[filas][columnas];
          for(int i=0; i<filas; i++){
            for(int j=0; j<columnas; j++){
-               matriz[i][j]=' ';
+               matriz[i][j]='0';
            }
        }      
         
@@ -150,16 +150,16 @@ public class CrucigramaJuego {
 
     }
    public boolean verificarLetra(char letra, int a, int b){
-       if(a<= filas && b<=columnas){
+       if(0<=a && a<= filas && b<=columnas && 0<=b){
           if(matriz[a][b]==letra){
            return true;
            
        }
-       else
-           return false;
+         else
+              return true;
    }
        return false;
-   }
+  }
 
     private Glosario glosarito;
     private int filas;
