@@ -3,7 +3,6 @@ package Control;
 
 import modelo.CrucigramaJuego;
 import vistas.VistaJuego;
-import vistas.VistaPrincipal;
 
 /**
  *
@@ -28,6 +27,10 @@ public class Control {
         vista2.setVisible(true);
         vista2.show();
     }
+<<<<<<< HEAD
+    
+    
+=======
       public void MostrarVistaFile(){
         vista1.setVisible(true);
         vista1.show();
@@ -39,11 +42,15 @@ public class Control {
          return crusi.getColumnas();
      }
      
+<<<<<<< HEAD
      public boolean verificarLetra(char a, int p, int q){
        return  crusi.verificarLetra(a, p, q);
      }
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
     CrucigramaJuego crusi;
-    VistaPrincipal vista1;
+    //VistaPrincipal vista1;
     VistaJuego vista2;
 }
 
