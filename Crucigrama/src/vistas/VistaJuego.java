@@ -29,7 +29,6 @@ public class VistaJuego extends javax.swing.JFrame {
     public VistaJuego(Control c) {
         initComponents();
         control=c;
-        archivoXml= new VistaPrincipal(c);
     }
 
     /**
@@ -268,14 +267,15 @@ public class VistaJuego extends javax.swing.JFrame {
    *en el area de texto*/
    if(abre!=null){     
       FileReader archivos=new FileReader(abre);
-      BufferedReader lee=new BufferedReader(archivos);
-      while((aux=lee.readLine())!=null){
-        texto+= aux;
-      }
-         lee.close();
-         return archivos.toString();
+     // BufferedReader lee=new BufferedReader(archivos);
+     // while((aux=lee.readLine())!=null){
+     //   texto+= aux;
+     // }
+         //lee.close();
+         
     }  
-   
+   texto=abre.getPath();
+   return texto;
    }
    catch(IOException ex)
    {
@@ -283,15 +283,13 @@ public class VistaJuego extends javax.swing.JFrame {
            "\nNo se ha encontrado el archivo",
                  "ADVERTENCIA!!!",JOptionPane.WARNING_MESSAGE);
     }
-    
-  return  texto;//El texto se almacena en el JTextArea
-}
-    
+    return texto;
+ }
     
     
     
     
-  VistaPrincipal archivoXml; 
+    
   Control control;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Acerca;

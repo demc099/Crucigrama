@@ -3,7 +3,6 @@ package Control;
 
 import modelo.CrucigramaJuego;
 import vistas.VistaJuego;
-import vistas.VistaPrincipal;
 
 /**
  *
@@ -28,12 +27,10 @@ public class Control {
         vista2.setVisible(true);
         vista2.show();
     }
-      public void MostrarVistaFile(){
-        vista1.setVisible(true);
-        vista1.show();
-    }
+    
+    
     CrucigramaJuego crusi;
-    VistaPrincipal vista1;
+    //VistaPrincipal vista1;
     VistaJuego vista2;
 }
 

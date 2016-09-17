@@ -1,15 +1,17 @@
 package modelo;
 
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
+import java.util.Iterator;
 import java.util.LinkedList;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.*;
 import org.w3c.dom.NodeList;
+import xml.Serializable;
 import xml.SerializadorHelper;
 
 
-public class CrucigramaJuego {
+public class CrucigramaJuego implements Iterator {
    // public CrucigramaJuego(Node nodeRoot){
     //    glosarito= new Glosario();
     //     matriz = new char[][];
@@ -101,12 +103,16 @@ public class CrucigramaJuego {
             parser.parse(path);
             Document doc = parser.getDocument();
             NodeList root = doc.getChildNodes();
+            int q;
+            q=0;
             Node nodoRoot = SerializadorHelper.getNode("crossword", root);
+            int p;
+            p=90;
             //
-            //
-            
+            //            
             filas = Integer.parseInt(SerializadorHelper.getNodeValue("rows", nodoRoot.getChildNodes()));
             columnas = Integer.parseInt(SerializadorHelper.getNodeValue("cols", nodoRoot.getChildNodes()));
+            
             crear(nodoRoot);
             setMatriz(filas, columnas);
         
@@ -165,4 +171,16 @@ public class CrucigramaJuego {
     private int filas;
     private int columnas;
     private char matriz[][];
+
+    @Override
+    public boolean hasNext() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Object next() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 }
