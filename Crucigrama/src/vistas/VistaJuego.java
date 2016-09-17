@@ -179,44 +179,58 @@ public class VistaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_AcercaActionPerformed
 
     private void RevisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RevisarActionPerformed
-       // control.verificar();  
-        // TODO add your handling code here:
+  
+               
+        
     }//GEN-LAST:event_RevisarActionPerformed
 
     private void CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarActionPerformed
-      // new VistaPrincipal().show();
+          int numRows;
+          int numColumns;
+           numRows= control.getFilas();
+           numColumns= control.getColumnas();
+           JTable(int numRows, int numColumns);
+           
+    
+    }
+        
+       
+// new VistaPrincipal().show();
         //control.MostrarVistaFile();
       //  archivoXml.show();
-        String xml;
-        xml=abrirArchivo();
-        control.leerXML(xml);
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                 if((control.devolverMatriz())[i][j]==' '){
-                JTextField btn1 = new JTextField(" ");
-                btn1.setBounds(j*30,i* 30, 32, 32);
+        //String xml;
+        //xml=abrirArchivo();
+        //control.leerXML(xml);
+        
+        
+        
+        
+        //for (int i = 0; i < 10; i++) {
+          //  for (int j = 0; j < 10; j++) {
+            //     if((control.devolverMatriz())[i][j]==' '){
+              //  JTextField btn1 = new JTextField(" ");
+               // btn1.setBounds(j*30,i* 30, 32, 32);
                   /*btn1.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent ae) {
                        
                     }
                      }); 
-                */
-                        panelPrincipal.add(btn1);
+                
+                //        panelPrincipal.add(btn1);
                 }
             }
         }
         panelPrincipal.repaint();
          
     }//GEN-LAST:event_CargarActionPerformed
-
+   
+}
+    */
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
        System.exit(-1);
     }//GEN-LAST:event_SalirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

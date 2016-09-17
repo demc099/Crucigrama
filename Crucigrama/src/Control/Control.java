@@ -32,6 +32,13 @@ public class Control {
         vista1.setVisible(true);
         vista1.show();
     }
+     public int getFilas(){
+         return crusi.getFilas();
+     }
+     public int getColumnas(){
+         return crusi.getColumnas();
+     }
+     
     CrucigramaJuego crusi;
     VistaPrincipal vista1;
     VistaJuego vista2;
