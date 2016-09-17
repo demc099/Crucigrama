@@ -36,3 +36,6 @@ public class Control {
     VistaPrincipal vista1;
     VistaJuego vista2;
 }
+
+
+

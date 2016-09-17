@@ -149,14 +149,20 @@ public class CrucigramaJuego {
         }
 
     }
-   
+   public boolean verificarLetra(char letra, int a, int b){
+       if(a<= filas && b<=columnas){
+          if(matriz[a][b]==letra){
+           return true;
+           
+       }
+       else
+           return false;
+   }
+       return false;
+   }
 
     private Glosario glosarito;
     private int filas;
     private int columnas;
     private char matriz[][];
-
- 
-  
-
 }

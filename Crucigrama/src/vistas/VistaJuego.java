@@ -8,7 +8,13 @@ package vistas;
 import Control.Control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -164,7 +170,8 @@ public class VistaJuego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void NormalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NormalActionPerformed
-        // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_NormalActionPerformed
 
     private void AcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcercaActionPerformed
@@ -178,7 +185,11 @@ public class VistaJuego extends javax.swing.JFrame {
 
     private void CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarActionPerformed
       // new VistaPrincipal().show();
-        control.MostrarVistaFile();
+        //control.MostrarVistaFile();
+      //  archivoXml.show();
+        String xml;
+        xml=abrirArchivo();
+        control.leerXML(xml);
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                  if((control.devolverMatriz())[i][j]==' '){
@@ -240,6 +251,46 @@ public class VistaJuego extends javax.swing.JFrame {
             }
         });
     }
+    
+    
+    private String abrirArchivo() {
+           String aux="";   
+           String texto="";
+    try
+           {
+   /**llamamos el metodo que permite cargar la ventana*/
+   JFileChooser file=new JFileChooser();
+   file.showOpenDialog(this);
+   /**abrimos el archivo seleccionado*/
+       File abre=file.getSelectedFile();
+ 
+   /**recorremos el archivo, lo leemos para plasmarlo
+   *en el area de texto*/
+   if(abre!=null){     
+      FileReader archivos=new FileReader(abre);
+      BufferedReader lee=new BufferedReader(archivos);
+      while((aux=lee.readLine())!=null){
+        texto+= aux;
+      }
+         lee.close();
+         return archivos.toString();
+    }  
+   
+   }
+   catch(IOException ex)
+   {
+     JOptionPane.showMessageDialog(null,ex+"" +
+           "\nNo se ha encontrado el archivo",
+                 "ADVERTENCIA!!!",JOptionPane.WARNING_MESSAGE);
+    }
+    
+  return  texto;//El texto se almacena en el JTextArea
+}
+    
+    
+    
+    
+    
   VistaPrincipal archivoXml; 
   Control control;
     // Variables declaration - do not modify//GEN-BEGIN:variables
