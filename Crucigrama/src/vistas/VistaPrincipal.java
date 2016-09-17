@@ -5,6 +5,8 @@
  */
 package vistas;
 
+import Control.Control;
+
 /**
  *
  * @author Zeneida
@@ -14,8 +16,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VistaPrincipal
      */
-    public VistaPrincipal() {
+    public VistaPrincipal(Control c) {
         initComponents();
+        control=c;
     }
 
     /**
@@ -58,7 +61,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
-      
+     String xml;
+      xml=jFileChooser1.getName();
+   
+        control.leerXML(xml);
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
     /**
@@ -91,11 +97,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaPrincipal().setVisible(true);
+                //new VistaPrincipal().setVisible(true);
             }
         });
     }
-
+    private Control control;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser jFileChooser1;
     // End of variables declaration//GEN-END:variables

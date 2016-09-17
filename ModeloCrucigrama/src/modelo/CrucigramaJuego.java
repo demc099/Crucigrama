@@ -4,12 +4,34 @@ import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import java.util.LinkedList;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.w3c.dom.*;
 import org.w3c.dom.NodeList;
 import xml.SerializadorHelper;
 
 
 public class CrucigramaJuego {
-
+   // public CrucigramaJuego(Node nodeRoot){
+    //    glosarito= new Glosario();
+    //     matriz = new char[][];
+    //     for(int i=0; i<filas; i++){
+    //       for(int j=0; j<columnas; j++){
+    //           matriz[i][j]=' ';
+    //       }
+    //   }    
+   //  }
+     public CrucigramaJuego() {
+        glosarito = new Glosario();
+        filas = 0;
+        columnas = 0;
+        matriz = new char[filas][columnas];
+         for(int i=0; i<filas; i++){
+           for(int j=0; j<columnas; j++){
+               matriz[i][j]=' ';
+           }
+       }      
+        
+    }
+    
     public CrucigramaJuego(int f, int c) {
         glosarito = new Glosario();
         filas = f;
@@ -24,10 +46,11 @@ public class CrucigramaJuego {
     }
 
     public void crear(Node nodoRoot) {
-        glosarito = new Glosario();
-        for (Node actual : Palabra(nodoRoot)) {
-            IngresarPalabra(new Palabra(actual));
-        }
+       String etq="word";
+        glosarito= new Glosario();
+             for (Node actual : SerializadorHelper.iterator(etq, nodoRoot)) {
+                IngresarPalabra(new Palabra(actual));
+            }  
     }
 
     public Glosario getGlosarito() {
@@ -73,6 +96,7 @@ public class CrucigramaJuego {
 
     public boolean deserializar(String path) {
         try {
+            
             DOMParser parser = new DOMParser();
             parser.parse(path);
             Document doc = parser.getDocument();
@@ -80,17 +104,23 @@ public class CrucigramaJuego {
             Node nodoRoot = SerializadorHelper.getNode("crossword", root);
             //
             //
+            
             filas = Integer.parseInt(SerializadorHelper.getNodeValue("rows", nodoRoot.getChildNodes()));
             columnas = Integer.parseInt(SerializadorHelper.getNodeValue("cols", nodoRoot.getChildNodes()));
             crear(nodoRoot);
-
+            setMatriz(filas, columnas);
+        
             return true;
-        } catch (Exception e) {
+        }  catch (Exception e) {
             return false;
         }
     }
 
-    void IngresarPalabra(Palabra pa) {
+    public void setMatriz(int a, int b){
+        matriz= new char[a][b];
+    }
+
+    public void IngresarPalabra(Palabra pa) {
         glosarito.agregar(pa);
         ingresarPalabraMatriz(pa);
 
@@ -126,6 +156,7 @@ public class CrucigramaJuego {
     private int columnas;
     private char matriz[][];
 
+ 
   
 
 }

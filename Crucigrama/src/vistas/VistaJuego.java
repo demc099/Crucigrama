@@ -5,6 +5,7 @@
  */
 package vistas;
 
+import Control.Control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -19,8 +20,10 @@ public class VistaJuego extends javax.swing.JFrame {
     /**
      * Creates new form VistaJuego
      */
-    public VistaJuego() {
+    public VistaJuego(Control c) {
         initComponents();
+        control=c;
+        archivoXml= new VistaPrincipal(c);
     }
 
     /**
@@ -174,11 +177,12 @@ public class VistaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_RevisarActionPerformed
 
     private void CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarActionPerformed
-       new VistaPrincipal().show();
-       
+      // new VistaPrincipal().show();
+        control.MostrarVistaFile();
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-               JTextField btn1 = new JTextField(" ");
+                 if((control.devolverMatriz())[i][j]==' '){
+                JTextField btn1 = new JTextField(" ");
                 btn1.setBounds(j*30,i* 30, 32, 32);
                   /*btn1.addActionListener(new ActionListener() {
                     @Override
@@ -187,13 +191,12 @@ public class VistaJuego extends javax.swing.JFrame {
                     }
                      }); 
                 */
-                
-             
-                panelPrincipal.add(btn1);
+                        panelPrincipal.add(btn1);
+                }
             }
         }
         panelPrincipal.repaint();
-        
+         
     }//GEN-LAST:event_CargarActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
@@ -230,11 +233,15 @@ public class VistaJuego extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VistaJuego().setVisible(true);
+            
+                 //new VistaJuego(control).setVisible(true);
+              
+                // control.MostrarVistaJuego();
             }
         });
     }
-
+  VistaPrincipal archivoXml; 
+  Control control;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Acerca;
     private javax.swing.JMenu Archivo;
