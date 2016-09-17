@@ -166,6 +166,15 @@ public class CrucigramaJuego  {
    }
        return false;
   }
+   
+   public int DevolverTamañoPalabra(int a, int b){
+       for(int i=0; i<glosarito.getCantidad(); i++){
+           if(glosarito.BuscarPalabraXPos(a, b)!=null){
+               return glosarito.BuscarPalabraXPos(a, b).getTamaño();
+           }
+       }
+       return -1;
+   }
 
     private Glosario glosarito;
     private int filas;

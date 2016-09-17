@@ -2,6 +2,7 @@
 package Control;
 
 import modelo.CrucigramaJuego;
+import modelo.Palabra;
 import vistas.VistaJuego;
 
 /**
@@ -27,28 +28,26 @@ public class Control {
         vista2.setVisible(true);
         vista2.show();
     }
-<<<<<<< HEAD
-    
-    
-=======
-      public void MostrarVistaFile(){
-        vista1.setVisible(true);
-        vista1.show();
+    public void Agregar(Palabra p){
+        crusi.IngresarPalabra(p);
     }
+
+   
+   
      public int getFilas(){
          return crusi.getFilas();
      }
      public int getColumnas(){
          return crusi.getColumnas();
      }
-     
-<<<<<<< HEAD
+     public int tamañoPalabra(int a , int b){
+         return crusi.DevolverTamañoPalabra(a, b);
+     }
+
      public boolean verificarLetra(char a, int p, int q){
        return  crusi.verificarLetra(a, p, q);
      }
-=======
->>>>>>> origin/master
->>>>>>> origin/master
+     
     CrucigramaJuego crusi;
     //VistaPrincipal vista1;
     VistaJuego vista2;

@@ -50,6 +50,17 @@ public class Glosario  {
         }
         return null;
     }
+     public Palabra BuscarPalabraXPos(int a, int b){
+         for(int i=0; i< cantidad; i++){
+          if(palabritas.get(i).getPosFila()==a && palabritas.get(i).getPosFila()==b){
+    
+              return palabritas.get(i);
+           
+          }
+        }
+    
+         return null;
+  }
      
     public String toString(){
         String msj=" ";

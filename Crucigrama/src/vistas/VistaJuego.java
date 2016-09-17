@@ -45,6 +45,7 @@ public class VistaJuego extends javax.swing.JFrame {
         panelPrincipal = new javax.swing.JPanel();
         Verticales = new javax.swing.JLabel();
         Horizontales = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         Archivo = new javax.swing.JMenu();
         Cargar = new javax.swing.JMenuItem();
@@ -65,7 +66,7 @@ public class VistaJuego extends javax.swing.JFrame {
         panelPrincipal.setLayout(panelPrincipalLayout);
         panelPrincipalLayout.setHorizontalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1028, Short.MAX_VALUE)
+            .addGap(0, 929, Short.MAX_VALUE)
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,6 +119,11 @@ public class VistaJuego extends javax.swing.JFrame {
         Crusigrama.add(Revisar);
 
         Solucion.setText("Solución");
+        Solucion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SolucionActionPerformed(evt);
+            }
+        });
         Crusigrama.add(Solucion);
 
         jMenuBar1.add(Crusigrama);
@@ -125,6 +131,11 @@ public class VistaJuego extends javax.swing.JFrame {
         Ayuda1.setText("Ayuda");
 
         Ayuda2.setText("Ayuda");
+        Ayuda2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Ayuda2ActionPerformed(evt);
+            }
+        });
         Ayuda1.add(Ayuda2);
 
         Acerca.setText("Acerca");
@@ -145,7 +156,9 @@ public class VistaJuego extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Verticales, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Horizontales, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -156,8 +169,13 @@ public class VistaJuego extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(Verticales, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(107, 107, 107)
+                                .addComponent(Verticales, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(Horizontales, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -175,20 +193,30 @@ public class VistaJuego extends javax.swing.JFrame {
     }//GEN-LAST:event_NormalActionPerformed
 
     private void AcercaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcercaActionPerformed
-        // TODO add your handling code here:
+  JOptionPane.showMessageDialog(null, "Integrantes:"
+                + "\n" +"Maria Montero Campos"+ "\n" +"Maria Gonzales Alvarado"+ "\n" +"Daniel Mora Cordero");
+                
+        
+        
     }//GEN-LAST:event_AcercaActionPerformed
 
     private void RevisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RevisarActionPerformed
        boolean b=true;
         for(int i=0; i< Rows; i++){
             for(int j=0; j<col; j++){
-              if(control.verificarLetra((char)jTable1.getValueAt(i, j), i,j )!=true){
+                if(control.verificarLetra((char)jTable1.getValueAt(i, j), i,j )!=true){
                       b=false;
                     }
-                }
-            
-               
-        }    
+                }     
+        }
+        if(b==true){
+       jLabel1.setText("Todo esta correcto");
+        }
+        else{
+             jLabel1.setText("Se equivoco");
+        }
+        panelPrincipal.add(jLabel1);
+        panelPrincipal.repaint();
     }//GEN-LAST:event_RevisarActionPerformed
 
     private void CargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CargarActionPerformed
@@ -209,12 +237,12 @@ public class VistaJuego extends javax.swing.JFrame {
            panelPrincipal.add(jTable1);
            
        panelPrincipal.repaint();
-    
-    
-    
-    
-    
+   
     }
+    
+    
+    
+    
         
        
 // new VistaPrincipal().show();
@@ -252,6 +280,21 @@ public class VistaJuego extends javax.swing.JFrame {
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
        System.exit(-1);
     }//GEN-LAST:event_SalirActionPerformed
+
+    private void SolucionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SolucionActionPerformed
+       char [][] matriz;
+       matriz= control.devolverMatriz();
+       for(int i=0; i<Rows; i++){
+           for(int j=0; j<col; j++){
+               jTable1.setValueAt(((char)matriz[i][j]) , i, j);
+           }
+       }
+   
+    }//GEN-LAST:event_SolucionActionPerformed
+
+    private void Ayuda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ayuda2ActionPerformed
+       
+    }//GEN-LAST:event_Ayuda2ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -343,6 +386,7 @@ public class VistaJuego extends javax.swing.JFrame {
     private javax.swing.JMenuItem Salir;
     private javax.swing.JMenuItem Solucion;
     private javax.swing.JLabel Verticales;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
